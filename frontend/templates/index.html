@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Alan</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_general.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_chatbot.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_upload.css') }}">
+  </head>
+  <body>
+    <h1>ALAN</h1>
+    <div class="wrapper-logo">
+      <h2>Your personal assistant by</h2>
+      <img class="logo" src="static/logo_cap.png" alt="Logo Capgemini">
+    </div>
+    <div class="wrapper">
+      <div class="tabs">
+        <div class="tab">
+          <input type="radio" name="css-tabs" id="tab-1" checked class="tab-switch">
+          <label for="tab-1" class="tab-label tab1">Ask</label>
+          <div class="tab-content">
+            <div>
+              <input type="text" id="input-text" class="input-text" placeholder="Enter your text here...">
+              <button id="answer-btn" class="button">Answer Me</button>
+              <button id="clear-btn" class="button">Clear Conversation</button>
+            </div>
+          </div>
+        </div>
+        <div class="tab">
+          <input type="radio" name="css-tabs" id="tab-2" class="tab-switch">
+          <label for="tab-2" class="tab-label tab2">Upload</label>
+          <div class="tab-content">
+            <div class="upload-container">
+              <div id="drag-drop-box" class="drag-drop-box">
+                <img src="static/import.png" alt="Drop Icon" class="import-icon">
+                <span class="drop-text">Drag and drop your file.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="file-list"></div>
+      <div class="chatbox">
+          <div id="chat-log" class="chat-log-container"></div>
+      </div>
+    </div>
+    <script src="{{ url_for('static', filename='chatbot.js') }}"></script>
+    <script src="{{ url_for('static', filename='upload.js') }}"></script>
+  </body>
+</html>
