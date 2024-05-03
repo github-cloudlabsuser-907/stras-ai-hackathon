@@ -1,6 +1,7 @@
 import os
 import openai
 
+from langchain.chains import LLMChain
 from langchain.chat_models import ChatOpenAI
 from langchain.llms import AzureOpenAI
 from langchain.vectorstores.base import VectorStore
@@ -12,6 +13,8 @@ from dotenv import load_dotenv
 from .azureblobstorage import AzureBlobStorageClient
 from .translator import AzureTranslatorClient
 from .azuresearch import AzureSearch
+
+from .customprompt import (PROMPT_KNOWLEDGE_SEARCH)
 
 class LLMHelper:
     def __init__(self,
@@ -119,3 +122,15 @@ class LLMHelper:
                 "engine": self.deployment_name
             }
         ) if llm_for_rag is None else llm_for_rag
+
+
+    def llm_knowledge_search(self, context: str, question: str) -> str:
+        result = LLMChain(
+            prompt=PROMPT_KNOWLEDGE_SEARCH,
+            llm=self.llm_for_project,
+            verbose=True
+        ).run(
+            query=question,
+            context=context
+            )
+        return result
