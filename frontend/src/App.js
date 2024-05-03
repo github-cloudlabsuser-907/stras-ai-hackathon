@@ -21,7 +21,7 @@ function App() {
           {/* Title */}
           <Container sx={{ marginTop: '5px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <Typography variant="h6" sx={{ fontSize: '32px', fontFamily: 'CustomFont, Courier New, monospace', margin: 0 }}>
-              Claudie
+              Nom de l'app
             </Typography>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
               <Typography sx={{ fontSize: '14px', fontFamily: 'Courier New, monospace' }}>
@@ -68,7 +68,7 @@ function App() {
                 <KeyboardReturnIcon onClick={() => setMenuOpen(false)} />
               </Box>
             </Drawer>
-
+ 
 
           {/* Main Content */}
           <Container
