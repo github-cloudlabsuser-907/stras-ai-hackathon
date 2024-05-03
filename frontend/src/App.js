@@ -34,42 +34,6 @@ function App() {
               />
             </div>
           </Container>
-
-          {/* Side Menu (Vertical Toolbar) */}
-            <Drawer
-              anchor="left"
-              open={isMenuOpen}
-              onClose={() => setMenuOpen(false)}
-              sx={{
-                '& .MuiDrawer-paper': {
-                  width: '200px',
-                  padding: '16px',
-                },
-              }}
-            >
-              <List>
-              <ListItem button onClick={() => handleTabChange(0)}>
-                  <ListItemText primary="App Explorer" />
-                </ListItem>
-                <Divider />
-                
-              </List>
-
-              {/* Keyboard Return Icon */}
-              <Box
-                sx={{
-                  position: "absolute",
-                  bottom: "16px",
-                  right: "16px",
-                  cursor: "pointer",
-                  fontSize: "24px",
-                }}
-              >
-                <KeyboardReturnIcon onClick={() => setMenuOpen(false)} />
-              </Box>
-            </Drawer>
- 
-
           {/* Main Content */}
           <Container
             sx={{
@@ -88,25 +52,6 @@ function App() {
               
             </Container>
           </Container>
-
-
-          {/* Button to Open Side Menu */}
-          <Button
-            variant="text"
-            onClick={() => setMenuOpen(true)}
-            sx={{
-              position: 'fixed',
-              top: '20px',
-              left: '0',
-              zIndex: '1000',
-              fontSize: '18px',
-              cursor: 'pointer',
-              padding: '4px 12px',
-              height: '24px',
-            }}
-          >
-            ☰
-          </Button>
         </div>
     </DocumentManagerContextProvider>
   );
