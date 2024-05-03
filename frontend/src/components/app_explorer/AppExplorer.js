@@ -92,6 +92,7 @@ const AppExplorer = () => {
           multiline={true}
           rows={8}
           value={response}
+          label="AI response...."
           disabled={true}
           />
       </div>

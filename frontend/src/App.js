@@ -21,7 +21,7 @@ function App() {
           {/* Title */}
           <Container sx={{ marginTop: '5px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <Typography variant="h6" sx={{ fontSize: '32px', fontFamily: 'CustomFont, Courier New, monospace', margin: 0 }}>
-              Nom de l'app
+            EffiSearch
             </Typography>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
               <Typography sx={{ fontSize: '14px', fontFamily: 'Courier New, monospace' }}>
