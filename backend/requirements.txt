@@ -69,5 +69,10 @@ urllib3==2.0.3
 Werkzeug==2.3.6
 yarl==1.9.2
 python-docx==0.8.11
+nltk
 --extra-index-url https://pkgs.dev.azure.com/azure-sdk/public/_packaging/azure-sdk-for-python/pypi/simple/
 azure-search-documents==11.4.0a20230509004
+PyPDF4
+PyPDF2
+reportlab==4.0.8
+pdf2docx

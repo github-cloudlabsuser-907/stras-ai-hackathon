@@ -58,8 +58,12 @@ def get_search_client(endpoint: str, key: str, index_name: str,
     index_client: SearchIndexClient = SearchIndexClient(
         endpoint=endpoint, credential=credential)
     try:
+        print("getting search client")
+
         index_client.get_index(name=index_name)
     except ResourceNotFoundError as ex:
+        print("oops couldnt")
+
         # Fields configuration
         fields = [
             SimpleField(name=FIELDS_ID, type=SearchFieldDataType.String,
@@ -105,7 +109,7 @@ def get_search_client(endpoint: str, key: str, index_name: str,
             ]
         )
         # Create the search index with the semantic settings and vector search
-        index = SearchIndex(name=index_name, fields=fields,
+        index = SearchIndex(name="effi-embeds-search", fields=fields,
                             vector_search=vector_search, semantic_settings=semantic_settings)
         index_client.create_index(index)
     # Create the search client

@@ -22,15 +22,14 @@ const AppExplorer = () => {
       method: 'POST',
       body: formData,
     })
-    .then((response) => {
-      if (response.ok) {
-        return Promise.all([response.blob(), Promise.resolve(response)]);
+    .then(response => response.json())
+    .then((data) => {
+      console.log(data)
+      if (data) {
+        setLoading(false)
+        setResponse(data)
       }
-      throw new Error("Network response was not ok.");
-    })
-    .then(([blob, response]) => {
-      const contentDisposition = response.headers.get('Content-Disposition');
-      const filename = ""
+      else throw new Error("Network response was not ok.");
     })
     .catch((error) => {
       console.error('Error asking question. Code: ', error);
